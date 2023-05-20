@@ -11,10 +11,15 @@
 num = input("Введите номер билета: ")
 while len(num) != 6:
     num = input("Введите номер шестизначного билета: ")
-num1 = 0
-for i in num:
-    num1 = int(i) + num1
-equality = num1 % 2
+num1 = num[:3]
+num2 = num[3:]
+left_num = 0
+right_num = 0
+for i in num1:
+    left_num = int(i) + left_num
+for i in num2:
+    right_num = int(i) + right_num
+equality = left_num - right_num
 if equality == 0:
     print("yes")
 else:
