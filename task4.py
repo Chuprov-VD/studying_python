@@ -11,6 +11,7 @@
 '''
 num = int(input("Введите количество журавликов: "))
 petr = num / 3 / 2
+petr = int(petr)
 sergei = petr
 kate = (petr + sergei) * 2
-print("Катя = {}\nПетя = {}\nСергей = {}".format(int(kate), int(petr), int(sergei)))
+print("Катя = {}\nПетя = {}\nСергей = {}".format(kate, petr, sergei))
