@@ -24,5 +24,5 @@ else:
     for i in range(quantity // 2):
         num = num + i
         result_list.insert(i, a[i] * a[-num])
-    result_list.insert(i, a[quantity // 2] * a[quantity // 2]) # умножаем число само на себя так как нет пары
+    result_list.insert(i + 1, a[quantity // 2] * a[quantity // 2]) # умножаем число само на себя так как нет пары
 print(result_list)
