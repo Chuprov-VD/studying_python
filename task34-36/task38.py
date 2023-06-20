@@ -11,10 +11,13 @@ with open(file, "a") as file_r:     # безопасное открытие фа
         file_r.write("\n" + name)
         surname = input("Введите фамилию для записи: ")
         file_r.write(" " + surname)
+        num = input("Введите номер телефона: ")
+        file_r.write(" " + num)
         surname = input("Вы хотите добавить другую фамилию или имя? Если да пишите Yes").upper()
 
-name_rem = input("Вы хотите заменить имя? Если да пишите Yes").upper()
-surname_rem = input("Вы хотите заменить фамилию? Если да пишите Yes").upper()
+name_rem = input("Вы хотите заменить имя? Если да пишите Yes: ").upper()
+surname_rem = input("Вы хотите заменить фамилию? Если да пишите Yes: ").upper()
+num_rem = input("Вы хотите заменить номер? Если да пишите Yes: ").upper()
 
 with open(file) as file_r:
     while (name_rem or surname_rem) == "YES":
@@ -28,6 +31,11 @@ with open(file) as file_r:
             surname_rem = input("Введите фамилию для удаления: ")
             surname = input("Введите фамилию для записи: ")
             file_r = file_r.read().replace(surname_rem, surname).strip()  # удаляет выбранные символы и заменяет на
+        elif num_rem == "YES":
+            num_rem = input("Введите номер для удаления: ")
+            num = input("Введите номер для записи: ")
+            file_r = file_r.read().replace(num_rem, num).strip()
+
         # переменную
             surname_rem = input("Вы хотите заменить другую фамилию? Если да пишите Yes").upper()
     new_guide = open(file, "w")
